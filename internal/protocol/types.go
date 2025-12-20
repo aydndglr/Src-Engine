@@ -44,8 +44,8 @@ type InputEvent struct {
 	Device InputDevice
 	Action InputAction
 	Flags  uint8
-	X      int16
-	Y      int16
+	X      uint16
+	Y      uint16
 	Wheel  int16
 	Key    uint16
 	Text   string
@@ -93,8 +93,8 @@ func DecodeInputEvent(data []byte) (InputEvent, error) {
 	act := InputAction(data[1])
 	flg := data[2]
 
-	x := int16(binary.LittleEndian.Uint16(data[4:6]))
-	y := int16(binary.LittleEndian.Uint16(data[6:8]))
+	x := binary.LittleEndian.Uint16(data[4:6])
+	y := binary.LittleEndian.Uint16(data[6:8])
 	wh := int16(binary.LittleEndian.Uint16(data[8:10]))
 	key := binary.LittleEndian.Uint16(data[10:12])
 
