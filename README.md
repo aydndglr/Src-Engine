@@ -39,18 +39,19 @@ SRConnect follows a **Sidecar (Companion Process)** architecture, separating the
 
 ```mermaid
 graph TD
-    A[Go Backend (SRCEngine)] -->|Encrypted P2P Tunnel (Raw H.264)| B(Electron Frontend)
-    B -->|Input Events (V2 Protocol)| A
+    A[Go Backend - SRCEngine] -->|Encrypted P2P Tunnel| B[Electron Frontend]
+    B -->|Input Events V2| A
 
-    subgraph Backend
+    subgraph BACKEND [Backend]
         A1[DXGI Screen Capture] --> A2[x264 Encoder]
         A2 --> A3[Private P2P VPN Layer]
     end
 
-    subgraph Frontend
+    subgraph FRONTEND [Frontend]
         B1[Ring Buffer] --> B2[WebCodecs API]
         B2 --> B3[HTML5 Canvas]
     end
+
 ```
 
 ### Backend (Go)
