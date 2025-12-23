@@ -90,23 +90,6 @@ Copy the generated `SRCEngine.exe` into the root directory of the Electron proje
 
 ---
 
-### 2️⃣ Prepare the Frontend (UI)
-
-```powershell
-cd src-client-electron
-npm install
-```
-
----
-
-### 3️⃣ Run
-
-```powershell
-npm start
-```
-
----
-
 ## 🖥️ Usage
 
 - On startup, SRConnect automatically launches in **Host (Broadcaster)** mode
@@ -135,26 +118,10 @@ Enter the target session ID and click **Connect**.
 - `internal/video/` – DXGI capture & x264 encoder (CGO)
 - `internal/network/` – Private P2P VPN & transport layer
 - `internal/input/` – Keyboard & mouse simulation (Windows / Linux)
-- `viewer.js` – **Critical**: Ring Buffer, WebCodecs, and input handling
 
 ---
 
 ## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add AmazingFeature"
-   ```
-4. Push the branch:
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-5. Open a Pull Request
 
 ---
 
